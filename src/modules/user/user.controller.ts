@@ -5,7 +5,7 @@ import { UserService } from './user.service';
 
 @Controller('users')
 @ApiBearerAuth()
-@ApiUseTags('ships')
+@ApiUseTags('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
