@@ -120,6 +120,40 @@ Aditional notes:
 ```
 ├── LICENSE
 ├── README.md
+├── bin
+|  ├── _get_source_dir.sh
+|  ├── backup_db.sh
+|  └── install.sh
+├── config
+├── db
+|  └── mysql
+|     └── install
+|        ├── data.sql
+|        └── structure.sql
+├── doc
+|  └── ships.md
+├── nodemon-debug.json
+├── nodemon.json
+├── package-lock.json
+├── package.json
+├── spec.yaml
+├── src
+|  ├── app.module.ts
+|  ├── config.ts
+|  ├── consts
+|  |  └── app.config.ts
+|  ├── db
+|  |  └── mysql
+|  |     └── mysql.ts
+|  ├── main.hmr.ts
+|  ├── main.ts
+├── test
+|  ├── app.e2e-spec.ts
+|  └── jest-e2e.json
+├── tsconfig.json
+├── tsconfig.spec.json
+├── tslint.json
+└── webpack.config.js
 ```
 
 
