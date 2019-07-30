@@ -3,8 +3,9 @@ import { ApiBearerAuth, ApiUseTags } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { UserService } from './user.service';
 
-@ApiBearerAuth()
 @Controller('users')
+@ApiBearerAuth()
+@ApiUseTags('ships')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 

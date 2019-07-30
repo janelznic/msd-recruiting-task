@@ -5,8 +5,8 @@ import { ShipDto } from './dto/ship.dto';
 import { ShipService } from './ship.service';
 
 @Controller('ships')
-@ApiUseTags('ships')
 @ApiBearerAuth()
+@ApiUseTags('ships')
 export class ShipController {
   constructor(private readonly shipService: ShipService) {}
 
