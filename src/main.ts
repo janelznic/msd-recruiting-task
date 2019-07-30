@@ -13,7 +13,6 @@ async function bootstrap() {
     .setTitle('MSD Shipyard API')
     .setDescription('README: https://github.com/janelznic/easyadmin-core')
     .setVersion('4.0')
-    .addTag('users')
     .addTag('ships')
     .addBearerAuth()
     .build();
