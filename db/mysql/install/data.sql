@@ -1,2 +1,2 @@
-INSERT INTO `shipyard` (`id`, `name`, `speed`) VALUES
+INSERT INTO `ships` (`id`, `name`, `speed`) VALUES
 (1, 'Enterprise D', 'Warp 9');

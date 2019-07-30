@@ -21,8 +21,8 @@ Available at URL: ```/ships```
   * Parameters:
     ```javascript
     {
-      name: <string>,
-      speed: <string>
+      name: <string> (required),
+      speed: <string> (required)
     }
     ```
   * Returns:

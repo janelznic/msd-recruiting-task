@@ -38,6 +38,21 @@ Aditional notes:
 - [Links](#Links)
 - [Documentation](#Documentation)
 - [Features](#Features)
+- [Getting Started](#Getting-Started)
+  - [Prerequisites](#Prerequisites)
+  - [Installation](#Installation)
+  - [Start](#Start)
+  - [Directory Structure](#Directory-Structure)
+  - [NPM Scripts](#NPM-Scripts)
+  - [Requests](#Requests)
+    - [Request example using HTTP bareer token authentication](#Request-example-using-HTTP-bareer-token-authentication)
+- [Development](#Development)
+  - [Recommendations](#Recommendations)
+  - [Contributing](#Contributing)
+    - [Git Branches](#Git-Branches)
+  - [Development Environment](#Development-Environment)
+  - [API](#API)
+    - [Swagger](#Swagger)
 - [License](#License)
 
 
@@ -64,6 +79,108 @@ Aditional notes:
 - Using the last ECMAScript 8 (2017) features as `async-await`
 - [nodemon](https://nodemon.io/) build tool with monitoring for any changes in source code
 - [Swagger UI](https://swagger.io/) for API documentation preview and requests testing
+
+
+## Getting Started
+
+### Prerequisites
+
+* You need to install [MySQL server](https://dev.mysql.com/doc/refman/8.0/en/installing.html) either on your local machine.
+* Create manually a new database (preferably with charset `utf8mb4` and collation `utf8mb4_unicode_ci`).
+
+
+### Installation
+
+1. Clone git repository:
+
+   `git clone git@github.com:janelznic/msd-recruiting-task.git`
+
+
+2. Go to repository directory *msd-recruiting-task*:
+
+   `cd msd-recruiting-task`
+
+
+3. _(optional step)_ Prepare config file and import MySQL database files
+
+   `npm run prepare`
+
+
+4. Install all the module dependencies:
+
+   `npm install` or `npm i`
+
+
+### Start
+1. Start HTTP server with `npm start`
+2. Go to: `http://localhost:4242/`
+
+
+### Directory structure
+```
+├── LICENSE
+├── README.md
+```
+
+
+### NPM Scripts
+- `backup:db` - Backup database structure and data into the file
+- `build` - Transpile TypeScript to ES2017
+- `dev` - Run the development server without transpile to ES2017
+- `format` - Prettier code formatter
+- `lint` - Lint your TS code
+- `prepare` - Prepare config file and import MySQL database files
+- `reinstall` - Reinstall
+- `start` - Run the transpiled application
+- `structure` - List contents of directories in tree-like format
+- `test` - Run unit tests
+- `test:cov` - Show unit tests coverage
+- `test:e2e` - Run e2e tests
+- `test:watch` - Watch all files and run unit tests when changes occured
+- `uninstall` - Uninstall (only node_modules, not MySQL DB)
+
+
+### Requests
+Requests authentication is performed using [HTTP bareer token](https://tools.ietf.org/html/rfc6750) in headers. The component temporarily retrieves a list of tokens from a constant provided by the `SessionModule`.
+
+#### Request example using HTTP bareer token authentication
+```bash
+curl --header "Authorization: Bearer Ynzyo9YNn1OAQ19rak90hXCIQh3Mj12Q" http://localhost:4242/users/list-users/
+```
+
+
+## Development
+
+### Recommendations
+* **.editorconfig** plug-in compatible editor ([http://editorconfig.org](http://editorconfig.org))
+
+### Contributing
+Please use `npm run lint` command before every commit and fix all your errors and warnings!
+
+
+#### Git Branches
+* __master__ - Production, __always stable__
+* __test__ - Test (to be merged with *develop* branch), RC versions only
+* __develop__ - Development branch (always make feature branches from this)
+* __hotfix/*__ - Hotfixes (to be merged with *develop* and *test* branch)
+* __feature/*__ - Feature branches (to be merged with *develop* branch only)
+
+__IMPORTANT NOTE:__ Always make pull requests only from your feature branch to *develop* branch, ***NOT*** to *master* branch!
+
+
+### Development Environment
+You can use built-in development server that will monitor for any changes in your source and automatically restart your server with monitoring for any changes in source code.
+
+1. Start development server with `npm run dev`
+2. Go to: `http://localhost:3000/`
+
+
+### API
+
+#### Swagger
+* [Swagger UI](https://swagger.io/) is available on `http://localhost:4242/swagger/`
+* How to authenticate:
+![How to authenticate](https://docs.nestjs.com/assets/swagger-auth.gif "How to authenticate")
 
 
 ## License
